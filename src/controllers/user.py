@@ -1,7 +1,7 @@
 from flask import json
 
 
-class User:
+class ControllerUser:
     def save(self, req):
         user = req.get_json()
         if user['name'] == "":

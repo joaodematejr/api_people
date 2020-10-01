@@ -1,8 +1,8 @@
 
 from flask import Flask, request, json
-from controllers.user import User
+from controllers.user import ControllerUser
 
-user = User()
+user = ControllerUser()
 
 
 class Routes:
