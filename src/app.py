@@ -8,7 +8,7 @@ routes = Routes()
 
 @app.route('/user/', methods=['POST'])
 def post_user():
-    response = routes.user_create(request)
+    response = routes.create(request)
     return response
 
 
