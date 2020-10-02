@@ -32,3 +32,14 @@ class ControllerUser:
                         return json.dumps({"code": 400, "description": "Email invalido, é pra colocar um email valido imbecil!", }), 400
                     else:
                         return database.save(user)
+
+    def remove(self, req):
+        user = req.get_json()
+        if user['cpf'] == None:
+            return json.dumps({"code": 400, "description": "CPF invalido, é pra colocar um cpf valido imbecil!", }), 400
+        else:
+            return database.delete(user)
+
+    def query(self, req):
+        user = req.get_json()
+        return database.query(user)

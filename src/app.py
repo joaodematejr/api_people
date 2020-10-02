@@ -6,9 +6,21 @@ app = Flask(__name__)
 routes = Routes()
 
 
-@app.route('/user/', methods=['POST'])
-def post_user():
+@app.route('/userCreate/', methods=['POST'])
+def create_user():
     response = routes.create(request)
+    return response
+
+
+@app.route('/userRemove/', methods=['POST'])
+def remove_user():
+    response = routes.remove(request)
+    return response
+
+
+@app.route('/userQuery/', methods=['POST'])
+def query_user():
+    response = routes.query(request)
     return response
 
 
